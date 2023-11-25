@@ -1,0 +1,435 @@
+@forward './base/common';
+
+
+
+// variables
+$commonColor: #ffdf40;
+$commonBlack: #101115;
+$allTransition: all ease .3s;
+
+
+@mixin titleOne {
+    text-align: center;
+    font-weight: 500;
+    color: $commonColor;
+    letter-spacing: 5px;
+    font-size: 1.125rem;
+}
+
+@mixin titleTwo {
+    text-align: center;
+    font-weight: 600;
+    color: $commonBlack;
+    margin: 20px 0;
+}
+
+@mixin caName {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: $commonBlack;
+}
+
+@mixin paraStyle {
+    font-size: 24px;
+    font-weight: 400;
+    color: $commonBlack;
+}
+
+@mixin mainName {
+    color: $commonBlack;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+@mixin btnShadow($style, $pixel) {
+    box-shadow: 0 5px 10px $style;
+    transform: translateY($pixel);
+}
+
+.lab-btn {
+    background: #f16126;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 10px 30px;
+}
+
+
+.navtop-style4 {
+    .signup {
+        padding: 10px 30px;
+        font-weight: 700;
+        font-size: 1rem;
+        background: $commonColor;
+        border-radius: 4px;
+        color: $commonBlack;
+        transition: $allTransition;
+    }
+
+    .signup:hover {
+        @include btnShadow(rgba(255, 223, 64, .5), -4px)
+    }
+}
+
+.hero-style-4 {
+    background: url('../alldata/photos/Index-4/06.59265c00019fbe35e19b.jpg');
+    background-size: cover;
+    padding-bottom: 215px;
+    padding-top: 313px;
+
+    .hero-style4-center {
+        max-width: 800px;
+        margin: auto;
+
+        h2 {
+            text-align: center;
+            color: $commonBlack;
+            font-weight: 300;
+
+            span {
+                color: $commonColor;
+                font-weight: 500;
+            }
+        }
+
+        form {
+            border-radius: 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+
+            .input-area {
+                input {
+                    padding: 22px 50px 22px 15px;
+                    width: 100%;
+                    outline: none;
+                }
+            }
+        }
+
+        ul {
+            li {
+                display: flex;
+                align-items: center;
+                background: #fff;
+                padding: 10px 15px;
+                border-radius: 3px;
+                color: $commonBlack;
+                margin: auto;
+
+                span {
+                    margin-right: 8px;
+                    color: $commonColor;
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+}
+
+.proffesor-section {
+    .proffesor-section-center {
+        .proffesor-header {
+            h6 {
+                @include titleOne()
+            }
+
+            h2 {
+                @include titleTwo()
+            }
+        }
+
+        .proffesor-cart {
+            .cart-box {
+                position: relative;
+                transition: $allTransition;
+
+                .cart-detail {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 20px;
+                    z-index: 1;
+
+                    span {
+                        font-size: 18px;
+                        width: 36px;
+                        height: 36px;
+                        border-radius: 100%;
+                        color: $commonBlack;
+                        background: $commonColor;
+                    }
+
+                    h5 {
+                        color: #fff;
+                        font-size: 1.25rem;
+                        font-weight: 500;
+                    }
+                }
+            }
+
+            .cart-box::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(0deg, #051937bd, #0519379e, #05193759, #05193703, #05193700);
+            }
+
+            .cart-box:hover {
+                @include btnShadow(trasparent, -10px)
+            }
+        }
+
+        button {
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 10px 30px;
+            border: 2px solid $commonColor;
+            border-radius: 4px;
+            color: $commonBlack;
+            transition: $allTransition;
+        }
+
+        button:hover {
+            background-color: $commonColor;
+            @include btnShadow(rgba(255, 223, 64, .5), -5px)
+        }
+    }
+}
+
+.course-style-4 {
+    background: url('../alldata/photos/Index-4/01.0ce7bf00df5771427916.jpg') no-repeat;
+    background-size: cover;
+
+    .container {
+        .courses4-header {
+            color: $commonBlack;
+            border-radius: 6px;
+            background-color: #fff;
+            box-shadow: 0 0 10px hsla(0, 0%, 53%, .1);
+            padding: 15px 30px;
+
+            h2 {
+                @include titleTwo()
+            }
+        }
+
+        .course4-body {
+            .course-cart {
+                .single-cart {
+                    background-color: #fff;
+                    box-shadow: 0 0 10px hsla(0, 0%, 53%, .1);
+                    transition: $allTransition;
+
+                    .cart-img {
+                        overflow: hidden;
+
+                        img {
+                            transition: $allTransition;
+                        }
+
+                        .course-category {
+                            background-color: rgba(255, 223, 64, .85);
+                            padding: 5px 15px;
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            color: $commonBlack;
+
+                            .exper {
+                                font-weight: 700;
+                            }
+                        }
+                    }
+
+                    .cart-details {
+                        h4 {
+                            transition: $allTransition;
+                            @include mainName()
+                        }
+
+                        .course-member {
+                            .ca-name {
+                                @include caName()
+                            }
+
+                            .price {
+                                font-size: 1.25rem;
+                                font-weight: 500;
+                                color: $commonColor;
+                            }
+                        }
+                    }
+                }
+
+                .single-cart:hover .cart-img img {
+                    transform: scale(1.1);
+                }
+
+                .single-cart:hover .cart-details h4 {
+                    color: $commonColor;
+                }
+            }
+        }
+    }
+}
+
+.register-style4 {
+    background: url('../alldata/photos/Index-4/07.af2c9b7284d37c9d850d.jpg');
+    background-position: 50%;
+    background-size: cover;
+    color: #fff;
+
+    .register-left {
+        h6 {
+            text-align: left !important;
+            margin-bottom: 20px;
+            @include titleOne()
+        }
+
+        h2 {
+            color: #fff !important;
+            text-align: left !important;
+            @include titleTwo();
+
+            span {
+                color: $commonColor;
+            }
+        }
+
+        p {
+            color: #fff;
+        }
+    }
+
+    .register-right {
+        .form {
+            position: relative;
+            background-color: #fff;
+            border-radius: 6px 6px 0 0;
+            width: 100%;
+            height: 100%;
+
+            form {
+                text-align: center;
+                input {
+                    width: 100%;
+                    padding: 9px;
+                    outline: none;
+                }
+
+                button {
+                    transition: $allTransition;
+                    background-color: $commonColor;
+                    margin-top: 30px;
+                    @extend .lab-btn
+                }
+
+                button:hover {
+                    @include btnShadow(rgba(255, 223, 64, .5), -5px)
+                }
+                h4{
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .form::after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, #733270, #733270a6, #73327030, #73327000, #73327000);
+            bottom: 0;
+            left: 0;
+        }
+    }
+}
+
+
+@media (min-width: 1020px) {
+    .instructor4-style::after {
+        content: '';
+        position: absolute;
+        width: 60%;
+        bottom: 0;
+        right: -130px;
+        -webkit-transform: skewX(-20deg);
+        transform: skewX(-20deg);
+        width: 60%;
+        background: #ffdf40;
+        height: 100%;
+    }
+}
+
+.instructor4-style {
+    background: black;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    
+    .achieve-online{
+        color: $commonBlack;
+        h2{
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        p{
+            color: $commonBlack;
+            margin-bottom: 25px;
+        }
+        button{
+            background: #fff;
+            transition: $allTransition;
+            @extend .lab-btn
+        }
+        button:hover{
+            @include btnShadow(#ffffff80, -4px )
+        }
+    }
+}
+.instructor-head-style{
+    .instructor4-header{
+        h2{
+            @include titleTwo();
+            span{
+                color: $commonColor;
+            }
+        }
+    }
+}
+
+.app-section{
+    .container{
+        button{
+            color: $commonBlack;
+            border: 2px solid $commonColor;
+            background-color: #fff;
+            transition: $allTransition;
+            @extend .lab-btn
+        }
+        button:hover{
+            background-color: $commonColor;
+            @include btnShadow(rgba(255,223,64,.5), -4px)
+        }
+        h2{
+            @include titleTwo()
+        }
+    }
+}
+
+.footer-style-4{
+    background-color: $commonBlack;
+    *{
+        color: #fff !important;
+    }
+    .footer-center{
+        .footer-first{
+            h4{
+                font-weight: 700;
+                padding: 15px 0;
+            }
+        }
+    }
+}

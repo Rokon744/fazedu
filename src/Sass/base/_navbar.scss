@@ -1,0 +1,89 @@
+@use '../utilities/variables' as mem;
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: -10px;
+
+    li:hover {
+        background: mem.$commonBtn;
+    }
+
+    li {
+        transition: all ease .3s;
+
+        a {
+            align-items: center;
+            border-bottom: 1px solid #ecf0f3;
+            color: #000 !important;
+            display: flex;
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            justify-content: space-between;
+            padding: 10px 20px;
+            text-transform: capitalize;
+        }
+    }
+}
+
+.dropdown-menu:hover .dropdown-content {
+    display: block;
+}
+
+.after-lg {
+    ul {
+        li {
+            a {
+                color: #101115;
+                font-size: 1rem;
+                font-weight: 700;
+                text-transform: capitalize;
+            }
+        }
+    }
+}
+.navigation-bar{
+    background-color: #fdfdfd73;
+    backdrop-filter:blur(50px);
+    transition: all ease .1s;
+}
+.log-sign {
+    .log-sign-center {
+        .login-nav {
+            padding: 17px 17px;
+            color: mem.$commonBtn;
+            background-color: #fff;
+        }
+
+        .sign-nav {
+            padding: 7px 17px;
+            background: mem.$commonBtn;
+            color: #fff;
+        }
+    }
+
+    .hamberger-area {
+        button {
+            color: mem.$commonBtn;
+        }
+    }
+}
+
+.responsive-menu {
+    ul {
+    background: mem.$commonBtn;
+    transition: all ease .3s;
+        li {
+            a {
+                border-top: 1px solid hsla(0, 0%, 100%, .1);
+                color: #fff;
+                display: block;
+                font-size: 15px;
+                font-weight: 700;
+                padding: 6px 25px;
+                text-transform: capitalize;
+            }
+        }
+    }
+}

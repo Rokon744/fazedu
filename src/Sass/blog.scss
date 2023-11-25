@@ -1,0 +1,386 @@
+$commonColor: #ffdf40;
+$commonBtn : #f16126;
+$commonBlack: #101115;
+$allTransition: all ease .3s;
+$commonBg: #fff9f1;
+$bRadius: 4px;
+
+
+@mixin titleOne ($weight) {
+    text-align: center;
+    font-weight: $weight;
+    color: $commonColor;
+    letter-spacing: 5px;
+    font-size: 1.125rem;
+}
+
+@mixin titleTwo {
+    text-align: center;
+    font-weight: 600;
+    color: $commonBlack;
+}
+
+@mixin caName {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: $commonBlack;
+}
+
+@mixin paraStyle {
+    font-weight: 400;
+    line-height: 24px;
+    font-size: 1.125rem;
+    ;
+}
+
+@mixin mainName($size) {
+    color: $commonBlack;
+    font-weight: 700;
+    font-size: $size;
+}
+
+@mixin btnShadow($style, $pixel) {
+    box-shadow: 0 5px 10px $style;
+    transform: translateY($pixel);
+}
+
+.lab-btn {
+    background: #f16126;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 10px 30px;
+}
+
+.blog-style-right {
+    form {
+        box-shadow: 0 0 10px hsla(0, 0%, 53%, .1);
+    }
+
+    .post-category {
+        box-shadow: 0 0 10px hsla(0, 0%, 53%, .1);
+
+        h6 {
+            @include mainName(1.125rem)
+        }
+
+        ul {
+            li {
+                .detail {
+                    transition: $allTransition;
+                }
+            }
+
+            li:hover {
+                color: $commonBtn;
+            }
+
+            li:hover .detail {
+                transform: translateX(7px);
+            }
+        }
+    }
+
+    .most-popular-post {
+        box-shadow: 0 0 10px hsla(0, 0%, 53%, .1);
+
+        h6 {
+            @include mainName(1.125rem)
+        }
+
+        .popular-image {
+            h5 {
+                @include caName()
+            }
+        }
+    }
+
+    .gallery-photos {
+        box-shadow: 0 0 10px hsla(0, 0%, 53%, .1);
+
+        h6 {
+            @include mainName(1.125rem)
+        }
+    }
+
+    .popular-tags {
+        box-shadow: 0 0 10px hsla(0, 0%, 53%, .1);
+
+        h6 {
+            @include mainName(1.125rem)
+        }
+
+        ul {
+            margin-top: 15px;
+
+            li {
+                border: 1px solid rgb(232, 222, 222);
+                margin: 10px;
+                padding: 5px 10px;
+                transition: $allTransition;
+            }
+
+            li:hover {
+                color: #ffff;
+                background: $commonBtn;
+            }
+        }
+    }
+}
+
+.animation-button {
+    width: 92px;
+    height: 92px;
+    border-radius: 100%;
+    background: #fff;
+    z-index: 1 !important;
+
+    span {
+        font-size: 25px;
+        color: $commonBtn;
+        z-index: 2;
+    }
+}
+
+.blog-left-style3 {
+    button {
+        transition: $allTransition;
+        color: #ffff;
+        @extend .lab-btn
+    }
+
+    button:hover {
+        @include btnShadow(rgba(241, 97, 38, .5), -5px)
+    }
+
+    .common-cart {
+        background: #ffff;
+        box-shadow: 0 5px 10px rgba(16, 17, 21, .1);
+
+        .cart-img {
+            img {
+                transition: $allTransition;
+            }
+        }
+
+        .cart-details {
+            padding: 30px;
+
+            h2 {
+                text-align: start !important;
+                transition: $allTransition;
+                @include titleTwo()
+            }
+
+            ul {
+                display: flex;
+                align-items: center;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    margin-right: 15px;
+
+                    svg {
+                        color: $commonBtn;
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .common-cart:hover .cart-details h2 {
+        color: $commonBtn;
+    }
+
+    .common-cart:hover img {
+        transform: scale(1.2);
+    }
+
+    .last-box {
+        .cart-img {
+            background: #26c976;
+            height: 320px;
+
+            img {
+                margin: auto;
+                margin-top: 40px;
+            }
+
+            h4 {
+                text-align: center;
+                color: #ffff !important;
+                line-height: 1.5;
+                margin: 15px 10px;
+                @include mainName(1.5rem)
+            }
+        }
+    }
+}
+
+.blog-left-style4 {
+    article {
+        box-shadow: 0 5px 10px rgba(16, 17, 21, .1);
+
+        .common-cart {
+            background: #ffff;
+            box-shadow: 0 5px 10px rgba(16, 17, 21, .1);
+
+            .cart-img {
+                img {
+                    transition: $allTransition;
+                }
+            }
+
+            .cart-details {
+                padding: 30px;
+
+                h2 {
+                    text-align: start !important;
+                    transition: $allTransition;
+                    @include titleTwo()
+                }
+
+                ul {
+                    display: flex;
+                    align-items: center;
+
+                    li {
+                        display: flex;
+                        align-items: center;
+                        margin-right: 15px;
+
+                        svg {
+                            color: $commonBtn;
+                            margin-right: 5px;
+                        }
+                    }
+                }
+
+                .quoteBlock {
+                    background: $commonBtn;
+                    padding: 30px;
+                    color: #ffff;
+
+                    p {
+                        color: #ffff;
+                    }
+                }
+            }
+        }
+
+        .bottom-part {
+            .title {
+                li {
+                    padding: 5px 18px;
+                    transition: $allTransition;
+                }
+
+                li:hover {
+                    background: $commonBtn;
+                    color: #ffff;
+                }
+            }
+
+            .icon {
+                li {
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #ffff;
+                    transition: $allTransition;
+                }
+
+                li:hover {
+                    transform: translateY(-5px);
+                }
+            }
+        }
+
+
+    }
+
+    .course-body-left {
+        box-shadow:  0 5px 10px rgba(16, 17, 21, .1);
+        h2 {
+            @include titleTwo()
+        }
+
+        h4 {
+            @include mainName(1.5rem)
+        }
+
+        .this-course {
+            li {
+                margin: 10px 0;
+
+                span {
+                    color: $commonBtn;
+                    font-size: 22px;
+                }
+            }
+        }
+
+        h6 {
+            @include mainName(1.125rem)
+        }
+
+        .assistent {
+            .assistant-details {
+                .rajib-icon {
+                    a {
+                        width: 36px;
+                        height: 36px;
+                        border-radius: 100%;
+                        margin: 0 2px;
+                        color: #ffff;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        transition: $allTransition;
+                    }
+
+                    a:hover {
+                        transform: translateY(-5px);
+                    }
+                }
+            }
+        }
+
+        .clients-comment {
+            .comments-details {
+                .star {
+                    color: $commonBtn;
+                }
+            }
+        }
+
+        form {
+            box-shadow: 0 0 10px hsla(0, 0%, 53%, .1);
+
+            textarea,
+            input {
+                background: #ecf0f3;
+                width: 100%;
+                margin: 8px 0;
+                padding: 10px;
+                outline: none;
+            }
+
+            button {
+                color: #ffff;
+                margin-top: 20px;
+                transition: $allTransition;
+                @extend .lab-btn
+            }
+
+            button:hover {
+                @include btnShadow(rgba(241, 97, 38, .5), -5px)
+            }
+        }
+    }
+}

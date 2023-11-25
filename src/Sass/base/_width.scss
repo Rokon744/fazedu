@@ -1,0 +1,25 @@
+// body section work
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 86%;
+        margin: auto;
+    }
+}
+@media (max-width: 640px) {
+    .container {
+        width: 95%;
+        margin: auto;
+    }
+}
+@media not all and (max-width: 640px) {
+    .container {
+        padding: 1.25rem/* 20px */;
+        margin: auto;
+    }
+}

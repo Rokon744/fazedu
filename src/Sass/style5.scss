@@ -1,0 +1,312 @@
+@forward './base/common';
+@forward './base/featureCommon';
+
+
+// variables
+$commonColor: #ffdf40;
+$commonBlack: #101115;
+$allTransition: all ease .3s;
+
+
+@mixin titleOne ($weight) {
+    text-align: center;
+    font-weight: $weight;
+    color: $commonColor;
+    letter-spacing: 5px;
+    font-size: 1.125rem;
+}
+
+@mixin titleTwo {
+    text-align: center;
+    font-weight: 600;
+    color: $commonBlack;
+}
+
+@mixin caName {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: $commonBlack;
+}
+
+@mixin paraStyle {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+@mixin mainName {
+    color: $commonBlack;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+@mixin btnShadow($style, $pixel) {
+    box-shadow: 0 5px 10px $style;
+    transform: translateY($pixel);
+}
+
+.lab-btn {
+    background: #f16126;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 10px 30px;
+}
+
+@media (max-width: 768px) {
+    .hero-style5::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: rgba(255, 223, 64, .85);
+        right: 0;
+        top: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-style5::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 50%;
+        background: rgba(255, 223, 64, .85);
+        right: 0;
+        top: 0;
+    }
+}
+
+.hero-style5 {
+    background: url('../alldata/photos/Index-5/08.1e2dab2417a63df4a314.jpg') no-repeat fixed;
+    background-position: 50%;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+
+    .hero5-center {
+        position: relative;
+        z-index: 1;
+
+        h6 {
+            text-align: left !important;
+            color: $commonBlack !important;
+            @include titleOne(600)
+        }
+
+        h2 {
+            color: $commonBlack;
+
+            span {
+                font-weight: 700;
+            }
+        }
+
+        p {
+            margin: 30px 0;
+            @include paraStyle()
+        }
+
+        button {
+            color: $commonBlack;
+            border: 2px solid $commonBlack;
+            transition: $allTransition;
+            background-color: transparent;
+            @extend .lab-btn
+        }
+
+        button:hover {
+            background-color: $commonBlack;
+            color: #fff;
+            @include btnShadow(rgba(16, 17, 21, .5), -4px)
+        }
+    }
+}
+
+.about-style5 {
+    .about5-center {
+        .about5-lincon {
+            h2 {
+                text-align: left !important;
+                @include titleTwo();
+
+                span {
+                    font-weight: 300;
+                }
+            }
+
+            p {
+                font-weight: 400;
+                line-height: 24px;
+                font-size: 18px;
+            }
+
+            ul {
+                li {
+                    padding: 5px 0;
+                    display: flex;
+
+                    p {
+                        width: 30%;
+                        font-weight: 500;
+                        color: $commonBlack;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+            }
+        }
+
+        .achieve {
+            .achieve-box {
+                .achieve-box-detail {
+                    h2 {
+                        font-weight: 700;
+                    }
+
+                    h2,
+                    p {
+                        color: $commonBlack;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.courseCarousel-style5 {
+    .carousel-cart:hover .cart-footer h4 {
+        color: $commonColor !important;
+    }
+
+    .carousel-cart {
+        .cart-footer {
+            svg {
+                color: $commonColor !important;
+            }
+        }
+
+        button {
+            color: $commonBlack !important;
+            background: $commonColor;
+        }
+
+        button:hover {
+            box-shadow: 0 5px 10px rgba(255, 223, 64, .5) !important;
+            transform: translateY(-4px) !important;
+            background-color: $commonColor !important;
+        }
+
+        .cart-image {
+            .absolute {
+                .font-medium {
+                    color: $commonBlack !important;
+                    background: $commonColor !important;
+                }
+
+                .m-auto {
+                    color: $commonColor !important;
+                }
+            }
+        }
+    }
+}
+
+.feature-style5 {
+    background: #f8f8f8;
+
+    .feature5-header {
+        h6 {
+            @include titleOne(500);
+        }
+
+        h2 {
+            margin-top: 15px;
+            @include titleTwo()
+        }
+    }
+}
+
+.testimonail-style5 {
+    background: #f5f5f5 !important;
+
+    .client-section-center {
+        .client-header {
+            h6 {
+                @include titleOne(500)
+            }
+
+            h2 {
+                @include titleTwo()
+            }
+        }
+        .client-inner{
+            .carousel-cart{
+                background-color: transparent !important;
+                p{
+                    max-width: 750px;
+                    margin: auto;
+                }
+                .relative{
+                    span{
+                        width: 30px;
+                        height: 30px;
+                        position: absolute;
+                        border-radius: 100%;
+                        top: 5px;
+                        left: 45%;
+                        color: $commonBlack;
+                        background: $commonColor;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 22px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.mybook-section{
+    background: $commonColor;
+    .mybook-header{
+        h6{
+            color: $commonBlack !important;
+            padding-bottom: 20px;
+            @include titleOne(500)
+        }
+        h2{
+            @include titleTwo()
+        }
+    }
+    .mybook-body{
+        .mybook-cart{
+            background: #fff;
+            box-shadow: 0 0 10px hsla(0,0%,53%,.1);
+            border-radius: 4px;
+            .cart-image{
+                img{
+                    transition: $allTransition;
+                }
+            }
+            .cart-detail{
+                h4{
+                    transition: $allTransition;
+                    @include mainName()
+                }
+                .cart-inner{
+                    .star{
+                        color: $commonColor;
+                    }
+                }
+            }
+        }
+        .mybook-cart:hover .cart-image img{
+            transform: scale(1.1);
+        }
+        .mybook-cart:hover .cart-detail h4{
+            color: $commonColor;
+        }
+    }
+}

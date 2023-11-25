@@ -1,0 +1,384 @@
+@use './utilities/variables' as mem;
+@forward './base/pageBtn';
+
+// variables
+$commonColor: #ffdf40;
+$commonBlack: #101115;
+$allTransition: all ease .3s;
+
+
+@mixin titleOne ($weight) {
+    text-align: center;
+    font-weight: $weight;
+    color: $commonColor;
+    letter-spacing: 5px;
+    font-size: 1.125rem;
+}
+
+@mixin titleTwo {
+    text-align: center;
+    font-weight: 600;
+    color: $commonBlack;
+}
+
+@mixin caName {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: $commonBlack;
+}
+
+@mixin paraStyle {
+    font-weight: 400;
+    line-height: 24px;
+    font-size: 1.125rem;
+    ;
+}
+
+@mixin mainName($size) {
+    color: $commonBlack;
+    font-weight: 700;
+    font-size: $size;
+}
+
+@mixin btnShadow($style, $pixel) {
+    box-shadow: 0 5px 10px $style;
+    transform: translateY($pixel);
+}
+
+.lab-btn {
+    background: #f16126;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 10px 30px;
+}
+
+
+.course-hero {
+    background: url('../alldata/photos/CoursesAll/download.jpg') no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    padding: 230px 0 100px;
+
+    .container {
+        h2 {
+            @include titleTwo()
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+
+            span {
+                color: $commonBlack;
+            }
+        }
+    }
+}
+
+.group-select-section {
+    background: mem.$commonBtn;
+
+    .icon-name {
+        color: #fff;
+    }
+
+    form {
+        select {
+            padding: 13px 5px;
+            border-radius: mem.$bRadius;
+            margin: 5px;
+        }
+    }
+}
+
+.courses-members {
+    background: mem.$commonBg;
+}
+
+.course-single-hero {
+    background: url('../alldata/photos/CoursesAll/download.jpg');
+    background-position: 50%;
+    background-size: cover;
+
+    .course-single-inner {
+        .course-single-right {
+            .right-image {
+                img {
+                    border: 10px solid #fff;
+                    border-radius: 6px;
+                }
+
+                .animation-button {
+                    width: 92px;
+                    height: 92px;
+                    border-radius: 100%;
+                    background: #fff;
+                    z-index: 1 !important;
+
+                    span {
+                        font-size: 25px;
+                        color: mem.$commonBtn;
+                        z-index: 2;
+                    }
+                }
+            }
+        }
+
+        .course-single-left {
+            .course-button {
+                button {
+                    a {
+                        padding: 3px 15px;
+                        border-radius: mem.$bRadius;
+                        margin: 0px 6px;
+                        font-weight: 500;
+                        color: #ffff;
+                    }
+                }
+            }
+
+            h2 {
+                line-height: 1.3;
+                text-align: start !important;
+                margin: 14px 0;
+                @include titleTwo()
+            }
+
+            p {
+                margin-bottom: 14px;
+                @include paraStyle()
+            }
+
+            .course-left-footer {
+                h5 {
+                    @include caName()
+                }
+
+                .star {
+                    margin-left: 8px;
+                    font-size: 20px;
+                    color: mem.$commonBtn;
+                }
+            }
+        }
+    }
+}
+
+.course-single-body {
+    background: mem.$commonBg;
+
+    .course-body-inner {
+        .course-body-left {
+            h2 {
+                @include titleTwo()
+            }
+
+            h4 {
+                @include mainName(1.5rem)
+            }
+
+            .this-course {
+                li {
+                    margin: 10px 0;
+
+                    span {
+                        color: mem.$commonBtn;
+                        font-size: 22px;
+                    }
+                }
+            }
+
+            h6 {
+                @include mainName(1.125rem)
+            }
+
+            .assistent {
+                .assistant-details {
+                    .rajib-icon {
+                        a {
+                            width: 36px;
+                            height: 36px;
+                            border-radius: 100%;
+                            margin: 0 2px;
+                            color: #ffff;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            transition: $allTransition;
+                        }
+
+                        a:hover {
+                            transform: translateY(-5px);
+                        }
+                    }
+                }
+            }
+
+            .clients-comment {
+                .comments-details {
+                    .star {
+                        color: mem.$commonBtn;
+                    }
+                }
+            }
+
+            form {
+                box-shadow: 0 0 10px hsla(0, 0%, 53%, .1);
+
+                textarea,
+                input {
+                    background: #ecf0f3;
+                    width: 100%;
+                    margin: 8px 0;
+                    padding: 10px;
+                    outline: none;
+                }
+
+                button {
+                    color: #ffff;
+                    margin-top: 20px;
+                    transition: $allTransition;
+                    @extend .lab-btn
+                }
+
+                button:hover {
+                    @include btnShadow(rgba(241, 97, 38, .5), -5px)
+                }
+            }
+        }
+
+        .course-body-right {
+            .right-head {
+                background: mem.$commonBtn;
+
+                h2 {
+                    color: #ffff !important;
+                    @include mainName(1.5rem)
+                }
+
+                p {
+                    color: #ffff;
+                }
+            }
+
+            h6 {
+                @include mainName(1.125rem)
+            }
+
+            .social-icon {
+                a {
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 100%;
+                    margin: 0 2px;
+                    color: #ffff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: $allTransition;
+                }
+            }
+
+            button {
+                color: #ffff;
+                transition: $allTransition;
+                background: #26C976;
+                @extend .lab-btn
+            }
+
+            button:hover {
+                @include btnShadow(rgba(38, 201, 118, .3), -5px)
+            }
+        }
+    }
+}
+
+.course-view-body {
+    background: mem.$commonBg;
+
+    .course-view-inner {
+        .course-view-left {
+            h4 {
+                margin: 25px 0;
+                @include mainName(1.75rem)
+            }
+
+            .assistent {
+                .assistant-details {
+                    h6 {
+                        @include mainName(1.125rem)
+                    }
+
+                    .rajib-icon {
+                        a {
+                            width: 36px;
+                            height: 36px;
+                            border-radius: 100%;
+                            margin: 0 2px;
+                            color: #ffff;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            transition: $allTransition;
+                        }
+
+                        a:hover {
+                            transform: translateY(-5px);
+                        }
+                    }
+                }
+            }
+        }
+
+        .course-view-right {
+            h6 {
+                @include mainName(1.25rem)
+            }
+
+            .course-right-accordion {
+                .accordion {
+                    .single-accordion {
+                        h5 {
+                            @include mainName(1rem)
+                        }
+
+                        .accor-head {
+                            p {
+                                font-size: 14px;
+                                color: $commonBlack !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.course-overview{
+    background-color: #1c222d;
+    .overview-iner{
+        .overviewBtn{
+            button{
+                font-size: 34px;
+                font-weight: 500;
+                margin-right: 15px;
+            }
+            button:hover{
+                color: #ffff;
+            }
+        }
+        .overview-body{
+            .overview{
+                h6{
+                    color: #fff;
+                    font-weight: 800;
+                }
+                .box{
+                    margin: 15px 0;
+                }
+            }
+        }
+    }
+}

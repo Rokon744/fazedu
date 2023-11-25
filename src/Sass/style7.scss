@@ -1,0 +1,296 @@
+@forward './base/featureCommon';
+
+
+// variables
+$commonColor: #ffdf40;
+$commonBlack: #101115;
+$allTransition: all ease .3s;
+
+
+@mixin titleOne ($weight) {
+    text-align: center;
+    font-weight: $weight;
+    color: $commonColor;
+    letter-spacing: 5px;
+    font-size: 1.125rem;
+}
+
+@mixin titleTwo {
+    text-align: center;
+    font-weight: 600;
+    color: $commonBlack;
+}
+
+@mixin caName {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: $commonBlack;
+}
+
+@mixin paraStyle {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+@mixin mainName($size) {
+    color: $commonBlack;
+    font-weight: 700;
+    font-size: $size;
+}
+
+@mixin btnShadow($style, $pixel) {
+    box-shadow: 0 5px 10px $style;
+    transform: translateY($pixel);
+}
+
+.lab-btn {
+    background: #f16126;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 10px 30px;
+}
+
+
+.hero-style7 {
+    background: url('../alldata/photos/Index-7/14.0174c5c1254af1183846.jpg');
+    background-position: 100%;
+    background-size: cover;
+
+    .hero-style7-top {
+        h2 {
+            text-align: start !important;
+            @include titleTwo()
+        }
+
+        p {
+            margin: 30px 0;
+            @include paraStyle()
+        }
+
+        button {
+            border: 2px solid $commonBlack;
+            background: transparent;
+            transition: $allTransition;
+            color: $commonBlack;
+            @extend .lab-btn
+        }
+
+        button:hover {
+            border: 2px solid transparent;
+            background-color: $commonColor;
+            @include btnShadow(rgba(255, 223, 64, .5), -5px)
+        }
+    }
+}
+
+.feature-style7 {
+    .feature-header {
+        h6 {
+            @include titleOne(500)
+        }
+
+        h2 {
+            margin-top: 15px;
+            @include titleTwo()
+        }
+    }
+}
+
+
+@media (min-width: 940px) {
+    .offer-section {
+        background-size: 120% 220%;
+    }
+}
+
+.offer-section {
+    background: url('../alldata/photos/Index-7/12.5b5a9afdd0ba0887d0fe.jpg') no-repeat;
+    background-position: 50%;
+    background-size: cover;
+
+    .offer-left {
+        h2 {
+            line-height: 3rem;
+            @include titleTwo()
+        }
+    }
+
+    .offer-right {
+        padding: 60px 100px;
+        border-radius: 12px;
+        box-shadow: 0 24px 46px rgba(16, 17, 21, .12);
+
+        .right-header {
+            font-size: 1.875rem;
+            text-align: center;
+            font-weight: 500;
+            color: $commonBlack;
+        }
+
+        .grid {
+            h2 {
+                color: $commonColor;
+                font-weight: 700;
+                margin: 0px 20px;
+            }
+
+            p {
+                margin-top: 10px;
+            }
+
+            span {
+                color: $commonBlack;
+                text-transform: capitalize;
+            }
+        }
+
+        button {
+            color: $commonBlack;
+            background: $commonColor;
+            transition: $allTransition;
+            @extend .lab-btn
+        }
+
+        button:hover {
+            @include btnShadow(rgba(255, 223, 64, .5), -5px)
+        }
+    }
+}
+
+.instructor-style7 {
+    background: #f9f9f9;
+
+    .instructor-header {
+        h6 {
+            color: $commonBlack !important;
+            @include titleOne(500)
+        }
+
+        h2 {
+            @include titleTwo()
+        }
+    }
+
+    .instructor-inner {
+        .instructor-cart {
+            .cart-single {
+                background: #fff;
+                box-shadow: 0 2px 4px rgba(16, 17, 21, .06);
+                border-radius: 4px;
+                transition: $allTransition;
+
+                .cart-details {
+                    h4 {
+                        @include mainName(1.5rem)
+                    }
+
+                    .icon {
+                        span {
+                            color: $commonColor;
+                        }
+                    }
+
+                    .contact-icon {
+                        margin-top: 15px;
+
+                        span {
+                            cursor: pointer;
+                            padding: 10px;
+                            border-radius: 3px;
+                            color: white;
+                            transition: $allTransition;
+                        }
+
+                        span:hover {
+                            transform: translateY(-4px);
+                        }
+                    }
+                }
+            }
+
+            .cart-single:hover {
+                transform: translateY(-10px);
+            }
+        }
+
+        .slider-cart {
+            box-shadow: 0 2px 4px rgba(16, 17, 21, .06);
+
+            .slider-box {
+                h4 {
+                    transition: $allTransition;
+                    @include mainName(1.25rem)
+                }
+
+                img {
+                    transition: $allTransition;
+
+                }
+            }
+
+            .slider-box:hover img {
+                transform: scale(1.2);
+            }
+
+            .slider-box:hover h4 {
+                color: $commonColor;
+            }
+        }
+
+    }
+}
+
+.blog-style7 {
+    .cart-detail {
+        .cart-body {
+            .user-calender {
+                span {
+                    color: $commonColor !important;
+                }
+            }
+
+            h5 {
+                border: 2px solid $commonColor !important;
+                color: #101115 !important;
+            }
+
+            h5:hover {
+                background: $commonColor !important;
+                box-shadow: 0 5px 10px rgba(255,223,64,.5) !important;
+                transform: translateY(-5px) !important;
+            }
+        }
+    }
+    .cart-detail:hover .cart-body h4{
+        color: $commonColor !important;
+    }
+}
+
+.subscribe-style7{
+    background: url('../alldata/photos/Index-7/13.be98fa6c7736f4f7b2d3.jpg');
+    background-position: 50%;
+    background-size: cover;
+    .container{
+        text-align: center;
+        h2{
+            @include titleTwo()
+        }
+        form{
+            input{
+                border-radius: 5px;
+                margin: 60px 0 40px 0;
+                outline: none;
+            }
+            button{
+                background: $commonColor;
+                color: $commonBlack;
+                transition: $allTransition;
+                @extend .lab-btn
+            }
+            button:hover{
+                transform: translateY(-5px);
+            }
+        }
+    }
+}

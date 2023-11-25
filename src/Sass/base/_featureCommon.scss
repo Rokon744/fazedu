@@ -1,0 +1,48 @@
+// variables
+$commonColor: #ffdf40;
+$commonBlack: #101115;
+$allTransition: all ease .3s;
+
+
+@mixin mainName($size) {
+    color: $commonBlack;
+    font-weight: 700;
+    font-size: $size;
+}
+
+
+.feature-cart {
+    .feture-icon {
+        font-size: 1.475rem;
+        width: 80px;
+        height: 80px;
+        border: 2px solid $commonColor;
+        color: $commonColor;
+        border-radius: 100%;
+        transition: $allTransition;
+
+        span {
+            transition: $allTransition;
+        }
+    }
+
+    .feature-detail {
+        h4 {
+            transition: $allTransition;
+            @include mainName(1.125rem)
+        }
+    }
+    
+}
+.feature-cart:hover .feature-detail h4 {
+    color: $commonColor;
+}
+
+.feature-cart:hover .feture-icon span {
+    color: $commonBlack;
+    transform: scale(1.3);
+}
+
+.feature-cart:hover .feture-icon {
+    background-color: $commonColor;
+}

@@ -1,0 +1,36 @@
+@use '../utilities/variables' as mem;
+
+.banner-section{
+    background: url(../../alldata/photos/hero-bg.jpg);
+    background-size: cover;
+    .banner-hero{
+        .banner-details{
+            h6{
+                font-size: 18px;
+                color: mem.$commonBtn;
+                font-weight:bold;
+            }
+            h2{
+                font-size: 66px;
+                line-height: 1.1;
+                color: black;
+                font-weight: 700;
+            }
+            .banner-category{
+                a{
+                    text-decoration: underline;
+                    font-weight: 500;
+                    color: black;
+                }
+            }
+            form{
+                box-shadow: 1px 1px 10px #a09d9d;
+                margin: 20px 0;
+                button{
+                    background: mem.$commonBtn;
+                    padding: 15px 20px;
+                }
+            }
+        }
+    }
+}

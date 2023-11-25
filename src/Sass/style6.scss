@@ -1,0 +1,327 @@
+// variables
+$commonColor: #ffdf40;
+$commonBlack: #101115;
+$allTransition: all ease .3s;
+
+
+@mixin titleOne ($weight) {
+    text-align: center;
+    font-weight: $weight;
+    color: $commonColor;
+    letter-spacing: 5px;
+    font-size: 1.125rem;
+}
+
+@mixin titleTwo {
+    text-align: center;
+    font-weight: 600;
+    color: $commonBlack;
+}
+
+@mixin caName {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: $commonBlack;
+}
+
+@mixin paraStyle {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+@mixin mainName($size) {
+    color: $commonBlack;
+    font-weight: 700;
+    font-size: $size;
+}
+
+@mixin btnShadow($style, $pixel) {
+    box-shadow: 0 5px 10px $style;
+    transform: translateY($pixel);
+}
+
+.lab-btn {
+    background: #f16126;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 10px 30px;
+}
+
+.hero-style6 {
+    background: url('../alldata/photos/Index-6/09.804de085f52406da10a4.jpg') no-repeat fixed;
+    background-position: 50%;
+    background-size: cover;
+
+    .hero-style-center {
+        h6 {
+            @include titleOne(600)
+        }
+
+        h2 {
+            color: #fff !important;
+            @include titleTwo()
+        }
+
+        p {
+            text-align: center;
+            color: #fff;
+            @include paraStyle()
+        }
+    }
+}
+
+.feature-style6 {
+    background: #f9f9f9;
+
+    .feature-cart {
+        .single-cart:hover {
+            box-shadow: 0 24px 46px rgba(16, 17, 21, .12);
+        }
+
+        .single-cart {
+            box-shadow: 0 2px 4px rgba(16, 17, 21, .1);
+            padding: 50px 30px;
+            border-radius: 3px;
+            transition: $allTransition;
+
+            h4 {
+                text-align: center;
+                margin-top: 15px;
+                @include mainName(1.5rem)
+            }
+
+            button {
+                text-align: center;
+                margin: auto;
+                font-weight: 500;
+                font-size: 20px;
+                color: $commonBlack;
+
+                span {
+                    opacity: 0;
+                    font-size: 25px;
+                    transition: $allTransition;
+                    width: 0;
+                }
+            }
+
+            button:hover {
+                color: $commonColor;
+            }
+
+            button:hover span {
+                transform: translateX(10px);
+                opacity: 1;
+                color: $commonColor;
+                font-weight: medium;
+            }
+        }
+    }
+
+    .feature-form {
+        form {
+            background: $commonColor;
+            border-radius: 4px;
+            box-shadow: 0 24px 46px rgba(85, 85, 85, .3);
+            padding: 37px 50px;
+
+            input,
+            select {
+                padding: 10px;
+                width: 100%;
+                margin: 10px 0;
+                border-radius: 4px;
+                outline: none;
+            }
+
+            h2 {
+                @include titleTwo()
+            }
+
+            button {
+                color: #fff;
+                background: $commonBlack;
+                transition: $allTransition;
+                @extend .lab-btn
+            }
+
+            button:hover {
+                background: #f16126;
+                @include btnShadow(rgba(241, 97, 38, .5), -5px)
+            }
+        }
+    }
+}
+
+.driving-section {
+    .driving-inner {
+        .driving-left {
+            h6 {
+                text-align: left !important;
+                @include titleOne(500)
+            }
+
+            h2 {
+                text-align: left !important;
+                padding: 15px 0;
+                @include titleTwo()
+            }
+
+            ul {
+                margin-top: 15px;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    margin: 5px 0;
+
+                    span {
+                        margin-right: 6px;
+                        color: $commonColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.cars-event {
+    background: #f9f9f9;
+
+    .cars-inner {
+        .cars-header {
+            h6 {
+                @include titleOne(500)
+            }
+
+            h2 {
+                margin: 15px 0;
+                @include titleTwo()
+            }
+        }
+
+        .cars-cart {
+            h4 {
+                background: $commonColor;
+                padding: 10px 0;
+                text-align: center;
+                @include mainName(1.25rem)
+            }
+
+            .cart-image {
+                img {
+                    transition: $allTransition;
+                }
+            }
+
+            h2 {
+                font-weight: 700;
+                color: $commonBlack;
+            }
+
+            ul {
+                margin-top: 30px;
+
+                li {
+                    margin: 13px 0;
+                }
+            }
+
+            button {
+                background: $commonColor;
+                color: $commonBlack;
+                transition: $allTransition;
+                @extend .lab-btn
+            }
+
+            button:hover {
+                @include btnShadow(rgba(255, 223, 64, .5), -5px)
+            }
+        }
+
+        .cars-cart:hover .cart-image img {
+            transform: scale(1.1);
+        }
+
+    }
+}
+
+.video-section {
+    background: url('../alldata/photos/Index-6/10.467a67cf8f939a361571.jpg');
+    background-position: 50%;
+    background-size: cover;
+
+    .video-inner {
+        h4 {
+            color: #fff !important;
+            @include mainName(1.25rem)
+        }
+
+        .video-button {
+            position: relative;
+            width: 92px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 92px;
+            border-radius: 100%;
+            border: 2px solid #cfd0fe;
+            background: #fff;
+            z-index: 10;
+            animation: buttonAnimate 3s infinite;
+
+            span {
+                color: $commonColor;
+            }
+        }
+
+        .video-animate {
+            width: 92px;
+            height: 92px;
+            margin: auto;
+        }
+    }
+
+}
+
+.contact-info{
+    background: url('../alldata/photos/Index-6/11.e76dd00f0d637e432ca9.jpg');
+    background-position: 50%;
+    background-size: cover;
+    .contact-info-header{
+        h2{
+            @include titleTwo();
+            span{
+                color: $commonColor;
+            }
+        }
+        p{
+            text-align: center;
+        }
+    }
+    .contact-info-inner{
+        .call-img{
+            margin: 30px 0;
+            img{
+                border: 2px solid $commonColor;
+                padding: 25px;
+                border-radius: 100%;
+            }
+        }
+        p{
+            margin-bottom: 14px;
+            color: $commonColor !important;
+            @include caName()
+        }
+        h4{
+            @include mainName(1.125)
+        }
+        .or-box{
+            width: 50px;
+            height: 50px;
+            background: $commonColor;
+            border-radius: 100%;
+        }
+    }
+}

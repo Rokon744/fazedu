@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+
+    .play-btn-animate {
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border: 1px solid rgb(255, 252, 252);
+        /* background-color: #000; */
+        background: rgba(177, 171, 174, 0.8);
+        top: 42%;
+        right: 45%;
+        z-index: 1;
+        animation: btnPulse 2s infinite;
+    }
+
+    @keyframes btnPulse {
+        form {
+            transform: scale(-1, -1);
+            opacity: 1;
+        }
+
+        to {
+            transform: scale(2, 2);
+            opacity: 0;
+        }
+    }
+
+
+    .animation-button::after,
+    .video-animate::after {
+        content: '';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width:100%;
+        height: 100%;
+        border-radius: 100%;
+        background: white;
+        animation: 3s ease infinite slidein;
+    }
+    @keyframes slidein {
+        form {
+            transform: scale(-1, -1);
+            opacity: 1;
+        }
+
+        to {
+            transform: scale(1.5, 1.5);
+            opacity: 0;
+        }
+    }
+
+
+
+    .style-2-header .banner-img {
+        animation: bounce 3s infinite;
+    }
+    @keyframes bounce {
+        0% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(15px);
+        }
+
+        0% {
+            transform: translateY(0px);
+        }
+    }
+
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        letter-spacing: var(--spacing);
+        text-transform: capitalize;
+        line-height: 1.25;
+        margin-bottom: 0.75rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-size: 1.3rem;
+    }
+
+    @media screen and (min-width: 800px) {
+        h1 {
+            font-size: 4rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        h3 {
+            font-size: 2rem;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            line-height: 1;
+        }
+    }
+}
